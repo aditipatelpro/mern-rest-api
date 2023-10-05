@@ -66,6 +66,7 @@ const getUser = asyncHandler (async (req, res) => {
         id: _id,
         name,
         email,
+        token: generateToken(_id)
     })
 })
 
