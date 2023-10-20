@@ -19,6 +19,10 @@
   },
   "homepage": "https://github.com/aditipatelpro/mern-rest-api#readme",
   "dependencies": {
+    "@types/jest": "^29.5.6",
+    "@types/node": "^20.8.7",
+    "@types/react": "^18.2.31",
+    "@types/react-dom": "^18.2.14",
     "bcryptjs": "^2.4.3",
     "colors": "^1.4.0",
     "cors": "^2.8.5",
@@ -27,7 +31,8 @@
     "express-async-handler": "^1.2.0",
     "jsonwebtoken": "^9.0.2",
     "mongodb": "^6.1.0",
-    "mongoose": "^7.5.3"
+    "mongoose": "^7.5.3",
+    "typescript": "^5.2.2"
   },
   "devDependencies": {
     "nodemon": "^3.0.1"
