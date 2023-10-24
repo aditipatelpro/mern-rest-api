@@ -1,10 +1,11 @@
+import express from 'express'
 const jwt = require('jsonwebtoken')
 const bcrypt = require('bcryptjs')
 const asyncHandler = require('express-async-handler')
 const User = require('../models/userModal')
 
 
-const registerUser = asyncHandler (async (req, res) => {
+export const registerUser = asyncHandler (async (req: express.Request, res: express.Response) => {
     const { name, email, password } = req.body
     if( !name || !email || !password){
         res.status(400)
@@ -41,7 +42,7 @@ const registerUser = asyncHandler (async (req, res) => {
 })
 
 
-const loginUser = asyncHandler (async (req, res) => {
+export const loginUser = asyncHandler (async (req: express.Request, res: express.Response) => {
     const {email,password} = req.body
     const findUser = await User.findOne({email})
 
@@ -59,15 +60,10 @@ const loginUser = asyncHandler (async (req, res) => {
 })
 
 
-const getUser = asyncHandler (async (req, res) => {
+export const getUser = asyncHandler (async (req: express.Request, res: express.Response) => {
     res.status(200).json(req.user)
 })
 
 const generateToken = (id) => {
     return jwt.sign({id}, process.env.JWT_SECRET, { expiresIn: '30d'})
 }
-module.exports = {
-    registerUser,
-    loginUser,
-    getUser,
-} 
