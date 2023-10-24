@@ -1,8 +1,9 @@
+import express from 'express'
+import asyncHandler from 'express-async-handler'
 const jwt = require('jsonwebtoken')
-const asyncHandler = require('express-async-handler')
 const User = require('../models/userModal')
 
-const protect = asyncHandler( async(req, res, next) => {
+const protect = asyncHandler( async(req: express.Request, res: express.Response, next: express.Function) => {
     let token
 
     if(req.headers.authorization && req.headers.authorization.startsWith('Bearer')){
