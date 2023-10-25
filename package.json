@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node backend/server.ts",
     "server": "nodemon backend/server.ts",
-    "client": "npm start --prefix frontend"
+    "client": "npm start --prefix frontend",
+    "lint": "eslint . --ext .ts"
   },
   "repository": {
     "type": "git",
@@ -35,6 +36,9 @@
     "typescript": "^5.2.2"
   },
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^6.9.0",
+    "@typescript-eslint/parser": "^6.9.0",
+    "eslint": "^8.52.0",
     "nodemon": "^3.0.1"
   }
 }
