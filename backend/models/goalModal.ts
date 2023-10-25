@@ -1,6 +1,12 @@
+import { ObjectId } from "mongodb";
 import mongoose from "mongoose";
 
-const goalSchema = new mongoose.Schema(
+type Goal = {
+    user: ObjectId,
+    text: string
+}
+
+const goalSchema = new mongoose.Schema<Goal>(
     {
         user: {
             type: mongoose.Schema.Types.ObjectId,
@@ -16,4 +22,5 @@ const goalSchema = new mongoose.Schema(
         timestamps: true
     }
 )
-export {goalSchema as Goal}
+
+export const Goal = mongoose.model<Goal>('Goal', goalSchema);

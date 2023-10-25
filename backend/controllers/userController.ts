@@ -1,8 +1,8 @@
 import express from 'express'
-const jwt = require('jsonwebtoken')
-const bcrypt = require('bcryptjs')
-const asyncHandler = require('express-async-handler')
-const User = require('../models/userModal')
+import jwt from 'jsonwebtoken'
+import bcrypt from 'bcryptjs'
+import asyncHandler from 'express-async-handler'
+import {User} from '../models/userModal'
 
 
 export const registerUser = asyncHandler (async (req: express.Request, res: express.Response) => {

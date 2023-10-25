@@ -1,6 +1,6 @@
 import express from 'express'
 import asyncHandler from 'express-async-handler'
-const Goal = require('../models/goalModal')
+import {Goal} from '../models/goalModal'
 
 export const getGoals = asyncHandler(async (req: express.Request, res: express.Response) => {
     const goals = await Goal.find({user: req.user.id})
