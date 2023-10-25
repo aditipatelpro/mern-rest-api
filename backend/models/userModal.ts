@@ -19,4 +19,4 @@ const userSchema = new mongoose.Schema({
         timestamps: true
     })
 
-    export {userSchema as User}
+export {userSchema as User}

@@ -1,7 +1,7 @@
 import express from 'express'
 const router = express.Router()
-const {getGoals, setGoal,updateGoal,deleteGoal,} = require('../controllers/goalController')
-const {protect} = require('../middleware/authMiddleware')
+import { getGoals, setGoal, updateGoal, deleteGoal } from '../controllers/goalController'
+import { protect } from '../middleware/authMiddleware'
 
 router.route('/').get(protect,getGoals).post(protect,setGoal)
 
