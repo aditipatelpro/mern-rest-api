@@ -1,14 +1,13 @@
 import express from 'express'
-const path = require('path')
-const colors = require('colors')
-var cors = require('cors')
+import path from 'path'
+import cors from 'cors'
 const dotenv = require('dotenv').config()
-const { errorHandler } = require('./middleware/errorMiddleware')
-const connectDatabase = require('./config/db')
+import { errorHandler } from './middleware/errorMiddleware'
+import {connectDB} from './config/db'
 
 const port = process.env.PORT || 8080
 
-connectDatabase()
+connectDB()
 const app = express()
 
 app.use(cors())

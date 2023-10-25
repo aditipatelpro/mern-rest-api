@@ -1,9 +1,9 @@
 import express from 'express'
 import asyncHandler from 'express-async-handler'
-const jwt = require('jsonwebtoken')
-const User = require('../models/userModal')
+import jwt from 'jsonwebtoken'
+import {User} from '../models/userModal'
 
-const protect = asyncHandler( async(req: express.Request, res: express.Response, next: express.Function) => {
+export const protect = asyncHandler( async(req: express.Request, res: express.Response, next: express.Function) => {
     let token
 
     if(req.headers.authorization && req.headers.authorization.startsWith('Bearer')){
@@ -26,5 +26,3 @@ const protect = asyncHandler( async(req: express.Request, res: express.Response,
         throw new Error('Not authorized and no token')
     }
 })
-
-module.exports = { protect }
