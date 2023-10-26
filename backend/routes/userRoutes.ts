@@ -7,4 +7,4 @@ router.post('/', registerUser)
 router.post('/login', loginUser)
 router.get('/me',protect, getUser)
 
-module.exports = router
+export default router
