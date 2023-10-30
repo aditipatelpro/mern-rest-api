@@ -1,11 +1,27 @@
 {
-  "extends": ["airbnb-base"],
+  "extends": [
+    "airbnb-base",
+    "airbnb-typescript/base"
+  ],
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
   "env": {
     "node": true,
     "es6": true,
     "browser": true
   },
   "rules": {
-    "no-console": "off"
+    "no-console": "off",
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "js": "never",
+        "jsx": "never",
+        "ts": "never",
+        "tsx": "never"
+      }
+   ]
   }
 }
