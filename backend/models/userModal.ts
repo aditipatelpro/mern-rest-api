@@ -1,12 +1,12 @@
 import mongoose from 'mongoose';
 
-type User = {
+type UserTpye = {
   name: string,
   email: string,
   password: string
 };
 
-const userSchema = new mongoose.Schema<User>(
+const userSchema = new mongoose.Schema<UserTpye>(
   {
     name: {
       type: String,
@@ -27,5 +27,5 @@ const userSchema = new mongoose.Schema<User>(
   },
 );
 
-const User = mongoose.model<User>('User', userSchema);
+const User = mongoose.model<UserTpye>('User', userSchema);
 export default User;

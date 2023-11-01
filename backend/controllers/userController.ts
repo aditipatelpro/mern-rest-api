@@ -4,6 +4,8 @@ import bcrypt from 'bcryptjs';
 import asyncHandler from 'express-async-handler';
 import User from '../models/userModal';
 
+const generateToken = (id) => jwt.sign({ id }, process.env.JWT_SECRET, { expiresIn: '30d' });
+
 export const registerUser = asyncHandler(async (req: express.Request, res: express.Response) => {
   const { name, email, password } = req.body;
   if (!name || !email || !password) {
@@ -60,5 +62,3 @@ export const loginUser = asyncHandler(async (req: express.Request, res: express.
 export const getUser = asyncHandler(async (req: express.Request, res: express.Response) => {
   res.status(200).json(req.user);
 });
-
-const generateToken = (id) => jwt.sign({ id }, process.env.JWT_SECRET, { expiresIn: '30d' });

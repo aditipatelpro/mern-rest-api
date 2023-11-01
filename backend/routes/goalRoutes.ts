@@ -2,7 +2,7 @@ import express from 'express';
 import {
   getGoals, setGoal, updateGoal, deleteGoal,
 } from '../controllers/goalController';
-import { protect } from '../middleware/authMiddleware';
+import protect from '../middleware/authMiddleware';
 
 const router = express.Router();
 
