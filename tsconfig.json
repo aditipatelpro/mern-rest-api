@@ -8,5 +8,5 @@
     "skipLibCheck": true,                                 /* Skip type checking all .d.ts files. */
     "allowJs": true,
   },
-  "include": ["./src/**/*"]
+  "include": ["./backend/**/*"]
 }
