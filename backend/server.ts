@@ -2,8 +2,8 @@ import express from 'express';
 import path from 'path';
 import cors from 'cors';
 import dotenv from 'dotenv';
-import { errorHandler } from './middleware/errorMiddleware';
-import connectDB  from './config/db';
+import errorHandler from './middleware/errorMiddleware';
+import connectDB from './config/db';
 import goalRoutes from './routes/goalRoutes';
 import userRoutes from './routes/userRoutes';
 

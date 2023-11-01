@@ -2,7 +2,7 @@ import express from 'express'
 import jwt from 'jsonwebtoken'
 import bcrypt from 'bcryptjs'
 import asyncHandler from 'express-async-handler'
-import {User} from '../models/userModal'
+import User from '../models/userModal'
 
 
 export const registerUser = asyncHandler (async (req: express.Request, res: express.Response) => {
