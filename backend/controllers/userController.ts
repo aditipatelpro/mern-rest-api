@@ -34,7 +34,6 @@ export const registerUser = asyncHandler(async (req: express.Request, res: expre
       name: createdUser.name,
       email: createdUser.email,
       token: generateToken(createdUser._id),
-
     });
   } else {
     res.status(400);

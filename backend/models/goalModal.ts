@@ -2,8 +2,8 @@ import { ObjectId } from 'mongodb';
 import mongoose from 'mongoose';
 
 type GoalType = {
-  user: ObjectId,
-  text: string
+  user: ObjectId;
+  text: string;
 };
 
 const goalSchema = new mongoose.Schema<GoalType>(
@@ -20,7 +20,7 @@ const goalSchema = new mongoose.Schema<GoalType>(
   },
   {
     timestamps: true,
-  },
+  }
 );
 
 const Goal = mongoose.model<GoalType>('Goal', goalSchema);

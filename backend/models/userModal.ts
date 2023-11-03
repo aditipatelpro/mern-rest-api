@@ -1,9 +1,9 @@
 import mongoose from 'mongoose';
 
 type UserTpye = {
-  name: string,
-  email: string,
-  password: string
+  name: string;
+  email: string;
+  password: string;
 };
 
 const userSchema = new mongoose.Schema<UserTpye>(
@@ -24,7 +24,7 @@ const userSchema = new mongoose.Schema<UserTpye>(
   },
   {
     timestamps: true,
-  },
+  }
 );
 
 const User = mongoose.model<UserTpye>('User', userSchema);
