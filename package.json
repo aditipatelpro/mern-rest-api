@@ -7,7 +7,9 @@
     "start": "node backend/server.ts",
     "server": "nodemon backend/server.ts",
     "client": "npm start --prefix frontend",
-    "lint": "eslint . --ext .ts"
+    "lint": "eslint . --ext .ts",
+    "test": "jest",
+    "test:watch": "jest --watch"
   },
   "repository": {
     "type": "git",
@@ -20,10 +22,12 @@
   },
   "homepage": "https://github.com/aditipatelpro/mern-rest-api#readme",
   "dependencies": {
+    "@babel/preset-env": "^7.23.2",
     "@types/jest": "^29.5.6",
     "@types/node": "^20.8.7",
     "@types/react": "^18.2.31",
     "@types/react-dom": "^18.2.14",
+    "babel-jest": "^29.7.0",
     "bcryptjs": "^2.4.3",
     "colors": "^1.4.0",
     "cors": "^2.8.5",
@@ -33,9 +37,12 @@
     "jsonwebtoken": "^9.0.2",
     "mongodb": "^6.1.0",
     "mongoose": "^7.5.3",
+    "ts-jest": "^29.1.1",
     "typescript": "^5.2.2"
   },
   "devDependencies": {
+    "@jest/globals": "^29.7.0",
+    "@types/supertest": "^2.0.15",
     "@typescript-eslint/eslint-plugin": "^6.9.0",
     "@typescript-eslint/parser": "^6.9.0",
     "eslint": "^8.52.0",
