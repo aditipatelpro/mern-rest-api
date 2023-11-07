@@ -10,6 +10,12 @@ import userRoutes from './routes/userRoutes';
 dotenv.config();
 const port = process.env.PORT || 8080;
 
+const logger = {
+  info: (message: string) => {
+    console.log(message);
+  },
+};
+
 connectDB();
 const app = express();
 
@@ -30,4 +36,8 @@ if (process.env.NODE_ENV === 'production') {
 
 app.use(errorHandler);
 
-app.listen(port, () => console.log('Server Started'));
+app.listen(port, () => {
+  logger.info(`backend server listening on ${port}`);
+});
+
+export default app;
