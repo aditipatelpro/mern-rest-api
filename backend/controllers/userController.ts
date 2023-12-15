@@ -4,7 +4,7 @@ import bcrypt from 'bcryptjs';
 import asyncHandler from 'express-async-handler';
 import User from '../models/userModal';
 
-const generateToken = (id) => jwt.sign({ id }, process.env.JWT_SECRET, { expiresIn: '30d' });
+export const generateToken = (id) => jwt.sign({ id }, process.env.JWT_SECRET, { expiresIn: '30d' });
 
 export const registerUser = asyncHandler(async (req: express.Request, res: express.Response) => {
   const { name, email, password } = req.body;
